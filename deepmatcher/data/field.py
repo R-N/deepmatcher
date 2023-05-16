@@ -33,7 +33,8 @@ class FastText(vocab.Vectors):
 class FastTextBinary(vocab.Vectors):
 
     name_base = 'wiki.{}.bin'
-    _direct_en_url = 'https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.en.zip'
+    #_direct_en_url = 'https://drive.google.com/uc?export=download&id=1Vih8gAmgBnuYDxfblbT94P6WjB7s1ZSh'
+    _direct_en_url = None
 
     def __init__(self, language='en', url_base=None, cache=None):
         """
@@ -46,7 +47,7 @@ class FastTextBinary(vocab.Vectors):
         url = base.format(language)
         backup_url = None
         self.destination = os.path.join(cache, 'wiki.{}.zip'.format(language))
-        if language == 'en' and url_base is None:
+        if language == 'en' and url_base is None and FastTextBinary._direct_en_url:
             backup_url = url
             self.backup_destination = self.destination
             url = FastTextBinary._direct_en_url
