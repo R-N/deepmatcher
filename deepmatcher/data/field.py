@@ -33,7 +33,7 @@ class FastText(vocab.Vectors):
 class FastTextBinary(vocab.Vectors):
 
     name_base = 'wiki.{}.bin'
-    _direct_en_url = 'https://drive.google.com/uc?export=download&id=1Vih8gAmgBnuYDxfblbT94P6WjB7s1ZSh'
+    _direct_en_url = 'https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.en.zip'
 
     def __init__(self, language='en', url_base=None, cache=None):
         """
